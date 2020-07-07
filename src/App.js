@@ -1,33 +1,19 @@
 import React from 'react';
-import {Switch, Route, Link} from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom'
 
 
 import './App.css';
 
-const HomePage = ()=>(
-    <div>
-        <Link to='/topics'>Topics</Link>
-        <h1>HOME PAGE</h1>
-    </div>
-)
-const TopicList = ()=>(
-    <div>
-        <h1>TOPIC LIST PAGE</h1>
-    </div>
-)
-const TopicDetail = ()=>(
-    <div>
-        <h1>TOPIC DETAIL PAGE</h1>
-    </div>
-)
+import HomePage from "./pages/homepage/homepage.components";
+import ShopPage from "./pages/shop/shop.component";
+
 
 function App() {
   return (
     <div>
         <Switch>
             <Route exact path='/' component={HomePage}/>
-            <Route exact path='/topics' component={TopicList}/>
-            <Route exact path='/topics/:topicId' component={TopicDetail}/>
+            <Route exact path='/shop' component={ShopPage}/>
         </Switch>
     </div>
   );
